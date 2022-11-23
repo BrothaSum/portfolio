@@ -179,7 +179,7 @@ body {
   height: 50vh;
   width: 100vw;
   color: white;
-  background-image: url("../img/houston1.jpg");
+  background-image: url("./img/houston1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
