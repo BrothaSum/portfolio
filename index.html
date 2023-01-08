@@ -14,32 +14,29 @@
     <script src="https://kit.fontawesome.com/e5f07d5602.js" crossorigin="anonymous"></script>
     <title>Bobbys Profile</title>
   </head>
-
   <body>
-    <div class="header" id="home">
-     
-      <div class="hamburger">
-        <nav>
-          <ul class="nav__menu">
-            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-            <li class="nav__item"><a href="#aboutMe" class="nav__link">About Me</a></li>
-            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-            <li class="nav__item"><a href="#contactMe" class="nav__link">Contact Me</a></li>
-          </ul>
-        </nav>
-          <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-      </div>
+  <div class="header" id="home">
 
+    <div class="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
+  </div>
+    <nav>
+      <ul class="nav__menu">
+        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#aboutMe" class="nav__link">About Me</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#contactMe" class="nav__link">Contact Me</a></li>
+      </ul>
+    </nav>
+    
+    
     <div class="hero">
-
       <h1 class="hero__text">
         Hi! my name is Bobby. 
-      I am a Fullstack developer with front-end and
+        I am a Fullstack developer with front-end and
         back-end knowledge.</h1>
     </div>
     <div class="main">
@@ -49,33 +46,39 @@
         </div>
         <h2 class="aboutMe__title" >About Me</h2>
         <p class="aboutMe__description">
-          I am a self-taught developer based out Houston, Texas.  My journey to 
-          becoming a self-taught developer was not a straight line. Going to school and working, it was difficult for me to discover a career that I would enjoy and be happy with. I initially thought I would become a mechanic because I enjoyed fixing and solving problems. The gratification I found after fixing a car was awesome. I quickly discovered that it wasn't the right field for me because of the physical nature of the job and having to fight the elements when I was outside.  
-          
+          I am a developer based out Houston, Texas. Going to school and working, it was difficult for me to discover a career that I would enjoy and be happy with. I initially thought I would become a mechanic because I enjoyed fixing and solving problems. The gratification I found after fixing a car was awesome. I quickly discovered that it wasn't the right field for me because of the physical nature of the job and having to fight the elements when I was outside.  
         </p>
       </div>
       <div class="projects"id="projects">
         <h1 class="projects__title" 
         >Projects</h1>
         <div class="projects__list">
-        <div class="card">
-          <div class="screenshot">
+          <div class="card">
+            <div class="screenshot">
               <img src="img/WerkMobile.PNG" class=" card__pic"alt="Kim's Website">
+            </div>
+            <h3 class="card__title">Werk by Kim</h3>
+            <p class="card__description">Werk by Kim is a website designed to introduce Kim to potential clients on what she can offer by ways of her physical training services. Additional features to help her clients achieve their fitness goals will be added per Kim's request such as tracking calories, setting caloric deficit goals and such.</p>  
+            <button class="readMore">Read more</button>
+            <div class="card__icons">
+              <i class="fa-solid fa-globe fa-2x"></i>
+              <i class="fa-brands fa-github fa-2x"></i>
+              <i class="fa-solid fa-share-nodes fa-2x"></i>
+            </div>
           </div>
-          <h3 class="card__title">Werk by Kim</h3>
-          <p class="card__description">Werk by Kim is a website designed to introduce Kim to potential clients on what she can offer by ways of her physical training services. Additional features to help her clients achieve their fitness goals will be added per Kim's request such as tracking calories, setting caloric deficit goals and such.</p>  
-          <div class="card__icons">
-          <i class="fa-solid fa-globe fa-2x"></i>
-          <i class="fa-brands fa-github fa-2x"></i>
-          <i class="fa-solid fa-share-nodes fa-2x"></i>
-          </div>
-      </div>
         <div class="card">
           <div class="screenshot">
               <img src="img/houston.jpg" class=" card__pic"alt="">
           </div>
           <h3 class="card__title">Houston Project</h3>
-          <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis facere cumque ut, possimus quae laudantium ullam doloribus quo eos placeat natus officiis modi deserunt voluptatum enim laborum laboriosam vero rerum!</p>  
+          <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis facere cumque ut, possimus quae laudantium ullam doloribus quo eos placeat natus officiis modi deserunt voluptatum enim laborum laboriosam vero rerum!</p>
+          <button class="readMore">Read more</button>
+
+          <div class="card__icons">
+            <i class="fa-solid fa-globe fa-2x"></i>
+            <i class="fa-brands fa-github fa-2x"></i>
+            <i class="fa-solid fa-share-nodes fa-2x"></i>
+            </div>
         </div>
         <div class="card">
           <div class="screenshot">
@@ -83,6 +86,12 @@
           </div>
           <h3 class="card__title">Houston Project</h3>
           <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis facere cumque ut, possimus quae laudantium ullam doloribus quo eos placeat natus officiis modi deserunt voluptatum enim laborum laboriosam vero rerum!</p>  
+          <button class="readMore">Read more</button>
+          <div class="card__icons">
+            <i class="fa-solid fa-globe fa-2x"></i>
+            <i class="fa-brands fa-github fa-2x"></i>
+            <i class="fa-solid fa-share-nodes fa-2x"></i>
+            </div>
       </div>
       </div>
       </div>
@@ -116,7 +125,7 @@
           </ul>
       </div>
       </div>
-      </div>
+      
     </div>
     <script src="index.js"></script>
   </body>

@@ -1,23 +1,36 @@
+/* FOR HAMBURGER AND NAVIGATION MENU */
 const hamburger = document.querySelector(".hamburger")
 const nav__menu = document.querySelector(".nav__menu")
-const nav__item = document.querySelector(".nav__item")
+const nav__link = document.querySelectorAll(".nav__link")
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active")
   nav__menu.classList.toggle("active")
-  nav__item.classList.toggle("active")
+  console.log(hamburger)
+  console.log(nav__menu)
 })
 
-document.querySelectorAll(".nav__link").forEach((e) =>
-  e.addEventListener("click", () => {
-    hamburger.classList.remove(".active")
-    nav__menu.classList.remove(".active")
-    nav__item.classList.remove(".active")
+nav__link.forEach((nav__link) => {
+  nav__link.addEventListener("click", function handleClick(event) {
+    console.log("box clicked", event)
+    hamburger.classList.toggle("active")
+    nav__menu.classList.toggle("active")
   })
-)
+})
+/*FOR COLLAPSING CARD DESCRIPTION AND FADE EFFECT*/
 
-//form
+const mores = document.querySelectorAll(".readMore")
 
-const form = document.querySelector("form-group")
+mores.forEach((more) => {
+  more.addEventListener("click", function handleClick(event) {
+    console.log("button clicked", event)
+    if (more.textContent == "Read more") {
+      more.textContent = "Read less"
+    } else {
+      more.textContent = "Read more"
+    }
+    const cardDescription = more.previousElementSibling
 
-form.get
+    cardDescription.classList.toggle("expand")
+  })
+})

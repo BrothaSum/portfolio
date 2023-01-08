@@ -13,6 +13,7 @@ body {
   grid-template-rows: repeat(auto, 1fr);
   grid-template:
     "header"
+    "nav"
     "hero"
     "main";
 }
@@ -25,11 +26,10 @@ body {
   height: 10vh;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 99;
-  transform-style: preserve-3d;
 }
 .nav ul {
   display: flex;
@@ -39,15 +39,22 @@ body {
   width: 30vw;
   background-color: #89cff0;
   list-style: none;
-  padding: 10px;
 }
 
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav__link {
-  transition: 03s ease;
+  height: 100%;
+  width: 100%;
+  transition: 400ms ease;
 }
 
 .nav__link:hover {
-  color: red;
+  color: #062336;
+  font-size: 1.1em;
 }
 
 .bar {
@@ -63,11 +70,16 @@ body {
 }
 
 .nav {
+  grid-area: nav;
   display: flex;
   flex-direction: column;
   align-self: center;
   cursor: pointer;
-  transform: translateZ(-10px);
+  place-self: center;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  height: fit-content;
 }
 
 .hamburger {
@@ -75,6 +87,8 @@ body {
   flex-direction: column;
   align-self: center;
   cursor: pointer;
+  min-height: fit-content;
+  margin: 0.5em 0.5em;
 }
 
 .hamburger.active .bar:nth-child(1) {
@@ -98,20 +112,20 @@ body {
 
 .nav__menu {
   background-color: rgb(137, 207, 240, 1);
-
-  position: absolute;
-  top: -4.375em;
-  left: 25%;
   display: flex;
   flex-direction: column;
   justify-items: center;
   text-align: center;
   transition: 0.5s;
-  z-index: -5;
+  z-index: 5;
+  height: fit-content;
+  width: 100%;
+  position: absolute;
+  top: -10em;
 }
 
 .nav__menu.active {
-  top: 10vh;
+  top: 10vh; /* need to put back to 10vh */
 }
 
 .nav__menu > li > a {
@@ -122,44 +136,30 @@ body {
   color: black;
 }
 
-.nav__menu {
-  position: absolute;
-  top: -60vh;
-  margin-top: 0;
-  left: 0;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
 .nav__item {
-  height: 0;
+  display: flex;
+  align-items: center;
+  height: fit-content;
   list-style: none;
   text-decoration: none;
+  height: 2em;
   width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  text-align: center;
 }
-/* .nav__item {
-  border: 1px solid black;
-  height: 2.5em;
-  padding: 0;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-} */
+
 .nav__menu > li.active {
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 0.5em 0;
+  padding: 0;
   width: 100%;
   color: black;
   background-color: #89cff0;
-  z-index: -3;
 }
+
 .nav__menu > li:not(:last-child) {
   border-bottom: 1px solid #444;
 }
@@ -239,6 +239,7 @@ body {
 }
 
 .projects {
+  /* todo turn into responsive grid layout, maybe add tags to languages used to sort */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -269,9 +270,11 @@ body {
   gap: 10px;
 }
 .card {
+  /* todo - add grid to keep elements together */
   border: 2px solid black;
-  height: 31.25em;
-  width: 90vw;
+  height: fit-content;
+  /*   max-width: 90vw; */
+  max-width: 20em;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -289,8 +292,46 @@ body {
 }
 
 .card__description {
+  --max-lines: 3;
+  --line-height: 1.4;
+  height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
   padding: 0 0.625em 0;
   margin-bottom: 0.625em;
+  overflow: hidden;
+  position: relative;
+  transition: height 400ms;
+}
+
+.card__description.expand {
+  height: 22vh;
+}
+/* 
+.cut__off::before {
+  content: "";
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, gray);
+} */
+
+.readMore {
+  background-color: #89cff0;
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  margin-top: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.readMore:hover {
+  background-color: lightcyan;
 }
 
 .card__icons {
@@ -300,6 +341,8 @@ body {
   height: 2em;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .contactMe {
@@ -368,141 +411,5 @@ input {
   font-size: 1.2em;
   color: black;
 }
-/* <--
-body {
-  display: grid;
-  grid-template-columns: repeat(2, 150px) repeat(6, 150px);
-  grid-template-rows: repeat(2, 1fr) 0.5fr;
-  grid-template-areas:
-    "profile profile main main main main main . . . . ."
-    "nav nav main main main main main . . . . ."
-    "links links main main main main main . . . . .";
-  background-image: url("../img/houston1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
+@media screen and (min-width: 600px) and (max-width: 800px) {
 }
-
-.profile,
-.nav,
-.links {
-  background-color: #478dc2;
-  opacity: 80%;
-}
-
-.profile {
-  grid-area: profile;
-  display: flex;
-  flex-direction: column;
-  justify-content: space;
-  align-items: center;
-}
-
-.pic-wrapper {
-  flex-shrink: 1;
-}
-.pic {
-  width: 160px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-top: 5px;
-  box-shadow: 0 0 0 0.35px lightgrey;
-}
-
-.name,
-.title {
-  color: white;
-  font-size: 1.5em;
-  text-align: center;
-  line-height: 1.4rem;
-  font-family: "Roboto", sans-serif;
-  padding-top: 15px;
-  white-space: nowrap;
-}
-
-.title {
-  font-weight: 100;
-  font-size: 1em;
-}
-
-.nav {
-  grid-area: nav;
-  font-family: "Roboto", sans-serif;
-}
-
-.nav__content {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-}
-
-.links {
-  display: flex;
-  list-style-type: none;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-
-li {
-  line-height: 1.8rem;
-  font-size: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.links {
-  grid-area: links;
-}
-
-.main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-}
-
-.main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.desc,
-.contact {
-  color: lightgrey;
-  font-size: 40px;
-  background-color: black;
-  opacity: 65%;
-  border-radius: 5px;
-  padding: 5px;
-  line-height: 3rem;
-  letter-spacing: 1.5;
-}
-
-@media screen and (max-width: 809px) {
-
-
-  .profile {
-    display: flex;
-    flex-direction: column;
-    column-width: 100%;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .nav {
-    display: none;
-  }
-  .main {
-    background-color: white;
-  }
-}
---> */
