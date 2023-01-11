@@ -17,6 +17,31 @@ nav__link.forEach((nav__link) => {
     nav__menu.classList.toggle("active")
   })
 })
+
+//swiper
+//todo Delete installed nodes and use cdn for swiperjs DO NOT use NPM to install library
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+})
+
 /*FOR COLLAPSING CARD DESCRIPTION AND FADE EFFECT*/
 
 const mores = document.querySelectorAll(".readMore")
