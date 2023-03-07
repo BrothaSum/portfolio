@@ -58,3 +58,25 @@ mores.forEach((more) => {
     cardDescription.classList.toggle("expand");
   });
 });
+
+const contactMeBtn = document.querySelector(".contactMeBtn");
+
+contactMeBtn.addEventListener("click", function handleClick(event) {
+  console.log("button clicked", event);
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+
+  modal.classList.toggle("open");
+  overlay.classList.toggle("open");
+});
+/* click anywhere on screen to toggle class */
+const overlay = document.querySelector(".overlay");
+
+overlay.addEventListener("click", function handleClick(event) {
+  console.log("button clicked", event);
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+
+  modal.classList.toggle("open");
+  overlay.classList.toggle("open");
+});
