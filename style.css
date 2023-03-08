@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   /* overflow-x: hidden; */
 }
 :root {
@@ -196,7 +196,6 @@ body {
 .nav__menu.active {
   top: 8vh;
   width: 100%; /* need to put back to 10vh */
-  margin: 0 auto;
 }
 
 .nav__menu > li > a {
@@ -396,7 +395,7 @@ body {
 .swiper-3d.swiper-css-mode .swiper-wrapper {
   perspective: 1200px;
   background-color: gray;
-  width: 25rem;
+  /* fixed overflow by deleting width */
 }
 
 .card {
@@ -489,7 +488,7 @@ body {
   color: black;
 }
 
-./* contactMe__title */
+/* contactMe__title */
 .skill__title {
   display: flex;
   justify-content: center;
