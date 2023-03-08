@@ -625,11 +625,11 @@ input {
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-  color: white;
+  color: black;
 }
 
 .input:focus ~ .placeholder {
-  color: black;
+  color: #89cff0;
 }
 
 .inputContainer {
@@ -659,6 +659,8 @@ input {
   top: -20px;
   left: 0.5em;
   display: block;
+  transform: translateY(0);
+  transition: transform 200ms;
 }
 textarea {
   width: 100%;
