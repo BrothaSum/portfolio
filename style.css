@@ -601,6 +601,20 @@ input {
   outline: none;
   box-shadow: 0 0 0 3px rgba(137, 207, 240, 0.5);
 }
+.cutout {
+  width: 6ch;
+  height: 2ch;
+  margin: 0 auto;
+  line-height: 2;
+  border-radius: 5px;
+  background-color: gray;
+  position: absolute;
+  top: -20px;
+  left: 0.5em;
+  display: block;
+  transform: translateY(0);
+  transition: transform 200ms;
+}
 
 .input:focus ~ .cutout,
 .input:not(:placeholder-shown) ~ .cutout {
@@ -648,20 +662,6 @@ input {
   margin-top: 30px;
 }
 
-.cutout {
-  width: 6ch;
-  height: 2ch;
-  margin: 0 auto;
-  line-height: 2;
-  border-radius: 5px;
-  background-color: gray;
-  position: absolute;
-  top: -20px;
-  left: 0.5em;
-  display: block;
-  transform: translateY(0);
-  transition: transform 200ms;
-}
 textarea {
   width: 100%;
   height: 10em;
