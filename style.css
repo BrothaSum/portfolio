@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* outline: 1px solid red; */
+  /*  outline: 1px solid red; */
+  /* overflow-x: hidden; */
 }
 :root {
   --swiper-navigation-color: #89cff0;
@@ -108,7 +109,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: /* 30vw */ 100%;
+  width: /* 30vw */ 100vw;
   background-color: #89cff0;
   list-style: none;
 }

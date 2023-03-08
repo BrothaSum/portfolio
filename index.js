@@ -6,8 +6,8 @@ const nav__link = document.querySelectorAll(".nav__link");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   nav__menu.classList.toggle("active");
-  console.log(hamburger);
-  console.log(nav__menu);
+  /*  console.log(hamburger);
+  console.log(nav__menu); */
 });
 
 nav__link.forEach((nav__link) => {
@@ -80,3 +80,14 @@ overlay.addEventListener("click", function handleClick(event) {
   modal.classList.toggle("open");
   overlay.classList.toggle("open");
 });
+
+var docWidth = document.documentElement.offsetWidth;
+
+[].forEach.call(document.querySelectorAll("*"), function (el) {
+  if (el.offsetWidth > docWidth) {
+    console.log(el);
+    console.log("Width: " + el.offsetWidth);
+  }
+});
+
+/*FOR SCROLLING TO TOP OF PAGE*/
