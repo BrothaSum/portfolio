@@ -537,7 +537,7 @@ body {
   background-color: gray;
   height: fit-content;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
   margin-top: 50px;
   padding: 10px;
@@ -604,15 +604,16 @@ input {
 .cutout {
   width: 6ch;
   height: 2ch;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   line-height: 2;
   border-radius: 5px;
   background-color: gray;
   position: absolute;
   top: -20px;
   left: 0.5em;
-  display: block;
+  /* display: block; */
   transform: translateY(0);
+  -webkit-transform: translateY(0);
   transition: transform 200ms;
 }
 
@@ -629,6 +630,7 @@ input {
   pointer-events: none;
   position: absolute;
   transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
   top: 1.5ch;
 }
