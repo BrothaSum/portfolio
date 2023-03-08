@@ -8,6 +8,7 @@
 }
 :root {
   --swiper-navigation-color: #89cff0;
+  --swiper-theme-color: #89cff0;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
   align-items: center;
   border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 99;
+  z-index: 6;
 }
 
 .logo {
@@ -398,6 +399,9 @@ body {
   /* fixed overflow by deleting width */
 }
 
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #89cff0 !important;
+}
 .card {
   /* todo - add grid to keep elements together */
   border: 2px solid black;
@@ -526,15 +530,18 @@ body {
 
 .modal {
   display: none;
-  background-color: gray /*  rgba(4, 38, 54, 0.46) */;
-  /* backdrop-filter: blur(11.3px); */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
   height: fit-content;
   margin: 0 auto;
   width: 70%;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 50px;
   padding: 10px;
-  z-index: 3;
+  z-index: 7;
 }
 
 .modal.open,
@@ -553,7 +560,7 @@ body {
   right: 0;
   background-color: rgba(4, 38, 54, 0.46);
   backdrop-filter: blur(11.3px);
-  z-index: 2;
+  z-index: 6;
 }
 .contactMeBtn {
   width: 50%;
@@ -597,28 +604,28 @@ input {
 
 .input:focus ~ .cutout,
 .input:not(:placeholder-shown) ~ .cutout {
-  transform: translateY(8px);
+  transform: translateY(1ch);
 }
 
 .placeholder {
   position: absolute;
-  left: 1em;
+  left: 1ch;
   color: black;
   font-size: 1.1em;
   pointer-events: none;
   position: absolute;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
-  top: 20px;
+  top: 1.5ch;
 }
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-30px) translateX(2px) scale(0.8);
+  transform: translateY(-3ch) translateX(0.5ch) scale(0.8);
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-  color: #808097;
+  color: white;
 }
 
 .input:focus ~ .placeholder {
@@ -628,7 +635,11 @@ input {
 .inputContainer {
   position: relative;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.ic1 {
+  margin-top: 30px;
 }
 .ic2 {
   margin-top: 30px;
@@ -638,8 +649,8 @@ input {
 }
 
 .cutout {
-  width: 50px;
-  height: 20px;
+  width: 6ch;
+  height: 2ch;
   margin: 0 auto;
   line-height: 2;
   border-radius: 5px;
