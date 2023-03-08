@@ -81,7 +81,7 @@ overlay.addEventListener("click", function handleClick(event) {
   overlay.classList.toggle("open");
 });
 
-var docWidth = document.documentElement.offsetWidth;
+let docWidth = document.documentElement.offsetWidth;
 
 [].forEach.call(document.querySelectorAll("*"), function (el) {
   if (el.offsetWidth > docWidth) {
