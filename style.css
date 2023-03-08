@@ -196,6 +196,7 @@ body {
 .nav__menu.active {
   top: 8vh;
   width: 100%; /* need to put back to 10vh */
+  margin: 0 auto;
 }
 
 .nav__menu > li > a {
