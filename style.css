@@ -677,6 +677,22 @@ form {
   font-size: 1.2em;
   color: black;
 }
+
+/* Thank you page */
+
+.thankYou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.625em;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 0;
+  background-color: #062336;
+  color: white;
+}
 @media screen and (min-width: 600px) and (max-width: 800px) {
   .hero {
     height: 70vh;
