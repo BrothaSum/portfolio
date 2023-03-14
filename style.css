@@ -497,6 +497,7 @@ body {
 .tool {
   width: 100px;
   font-size: 80px;
+  color: black;
 }
 .tools {
   text-align: center;
@@ -694,67 +695,27 @@ form {
   background-size: cover;
 }
 .thankYou__body {
-  width: fit-content;
+  width: 80%;
   font-size: 1.5em;
-  margin-top: 20px;
   background-color: rgba(4, 38, 54, 0.46);
   backdrop-filter: blur(10.3px);
-  inset: 2em;
+  padding: 10px;
   color: white;
   border-radius: 10px;
 }
 
-.thankYou__head {
-  font-size: 2em;
-  /* background-color: green; */
-  padding: 1rem;
-  text-align: left;
-}
-
 .tylogo {
-  width: 100%;
-  height: fit-content;
+  width: 8rem;
+  height: 2rem;
   position: relative;
   font-size: 0.8em;
-  inset: 0 0 0 2em;
-  margin-bottom: 20px;
   color: white;
+  margin-bottom: 10px;
 }
 
-.tyname {
-  font-family: tillana;
-  width: 100%;
-  background-size: cover;
-  font-size: 32px;
-  letter-spacing: -2px;
-  padding-right: 10px;
-  color: white;
-}
-.tline {
-  position: absolute;
-  font-family: yellowtail;
-  text-align: left;
-  text-decoration: none;
-  width: fit-content;
-  top: 25px;
-  width: 100%;
-}
-.tyw {
-  color: white;
-  text-decoration: none;
-  font-family: tillana;
-}
-.tyw:visited {
-  color: white;
-  text-decoration: none;
-}
-.tyws {
-  font-family: yellowtail;
-}
 .thankYou__message {
   font-size: 1em;
-  /* background-color: blue; */
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
 }
 @media screen and (min-width: 600px) and (max-width: 800px) {
@@ -794,8 +755,27 @@ form {
 }
 
 @media screen and (min-width: 800px) {
+  .hamburger {
+    display: none;
+  }
   .header {
-    display: ;
+    background-color: #89cff0;
+    border-bottom: none;
+    box-shadow: none;
+    padding-bottom: 1em;
+  }
+  .nav__menu {
+    background-color: rgb(137, 207, 240, 1);
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 5;
+    height: fit-content;
+    width: /* 100vw */ 100%;
+    position: absolute;
+    top: 3em;
   }
   .hero {
     height: 100vh;
