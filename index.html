@@ -29,15 +29,16 @@
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
-  </div>
-    <nav>
+    <nav class="nav">
       <ul class="nav__menu">
         <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
         <li class="nav__item"><a href="#aboutMe" class="nav__link">About Me</a></li>
         <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        
       </ul>
     </nav>
+  </div>
     
     
     <div class="hero">
@@ -50,11 +51,18 @@
       <div class="aboutMe" id="aboutMe">
         <div class="picWrapper">
           <img src="img/ProfilePic.jpg"  class="ProfilePic" alt="">
+          <div class="profileLinks"><!-- add links to social media links -->
+            <a class="pLink" href="https://www.linkedin.com/in/bobby-nguyen-6135781a3/"><i class="pLinks fa-brands fa-linkedin"></i></a>
+            <a class="pLink" href="https://github.com/BrothaSum"><i class="pLinks fa-brands fa-github"></i></a>
+            <a class="pLink" href=""><i class="pLinks fa-brands fa-facebook"></i></a>
+            <a href=""><i class=""></i></a>
+          </div>
         </div>
         <div class="wrapper">
         <h2 class="aboutMe__title" >About Me</h2>
         <p class="aboutMe__description">
-          I am a developer based out Houston, Texas. I believe in the mobile development first since everyone does seem to be on their phone alot. When I am not reading or watching videos about code trends that could help me out on my current projects. I like playing volleyball and poker when the occasion arises. </p>
+          As a Houston-based developer, I have a passion for mobile-first development, believing that in today's world, everyone spends a significant amount of time on their phones. I'm always on the lookout for new code trends and technologies that can help me improve my projects and deliver the best possible user experience. When I'm not coding or learning about the latest tech advancements, I enjoy playing volleyball and poker, both of which help me relax and unwind. Overall, I am a driven and dedicated developer who is constantly seeking new challenges and opportunities to learn and grow.
+        </p>
         </div>
       </div>
       <!-- Link Swiper's CSS -->
@@ -146,7 +154,7 @@
       </div>
 
       <button class="contactMeBtn" id="contact">Contact Me</button>
-      <dialog class="modal">
+      <dialog id="form" class="modal">
       
           <h1 class="contactMe__title">
             Contact Me
@@ -188,7 +196,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#aboutMe">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contactMe">Contact Me</a></li>
+            <li><a href="#form" id="form">Contact Me</a></li>
           </ul>
       </div>
     </div>

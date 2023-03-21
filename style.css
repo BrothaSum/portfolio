@@ -15,17 +15,9 @@ body {
   font-family: "roboto", sans-serif;
   height: fit-content;
   width: 100%;
-  /* display: grid;
-  grid-template-rows: repeat(auto, 1fr);
-  grid-template:
-    "header"
-    "nav"
-    "hero"
-    "main"; */
 }
 
 .header {
-  grid-area: header;
   background-color: #89cff0;
   position: relative;
   width: 100%;
@@ -35,14 +27,16 @@ body {
   align-items: center;
   border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 6;
+  transform-style: preserve-3d;
 }
 
 .logo {
   border-radius: 5px;
-  height: 100%;
-  inset: 0 0 0 2em;
+  z-index: 1;
+  /* height: 100%; */
+  inset: 0 0 0 0.5em;
   position: relative;
+  top: 0.5em;
   height: fit-content;
   animation: name 700ms ease-in 300ms;
 }
@@ -51,9 +45,6 @@ body {
   font-family: tillana;
   font-size: 25px;
   letter-spacing: -2px;
-  background-size: cover;
-  background-clip: text;
-  padding-right: 5px;
   text-decoration: none;
 }
 
@@ -72,7 +63,7 @@ body {
   font-family: yellowtail;
   text-align: center;
   position: absolute;
-  top: 25px;
+  top: 1.5em;
   left: 5px;
   color: black;
   display: block;
@@ -81,6 +72,7 @@ body {
   opacity: 0%;
   animation: tagLine 300ms ease-in 800ms;
   animation-fill-mode: forwards;
+  overflow: hidden;
 }
 
 @keyframes tagLine {
@@ -101,19 +93,19 @@ body {
   color: black;
 }
 .logo:hover {
-  scale: 1.1;
+  scale: 1.025;
   text-decoration: none;
 }
 
-.nav ul {
+/* .nav ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: /* 30vw */ 100vw;
+  width:100vw;
   background-color: #89cff0;
   list-style: none;
-}
+} */
 
 .nav__link {
   height: 100%;
@@ -139,7 +131,6 @@ body {
 }
 
 .nav {
-  grid-area: nav;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -147,8 +138,8 @@ body {
   place-self: center;
   width: 100%;
   position: absolute;
-  z-index: -1;
   height: fit-content;
+  transform: translateZ(-9px);
 }
 
 .hamburger {
@@ -159,6 +150,7 @@ body {
   min-height: fit-content;
   margin: 0.5em 0.5em;
   inset: 10px;
+  z-index: 1;
 }
 
 .hamburger.active .bar:nth-child(1) {
@@ -181,21 +173,20 @@ body {
 }
 
 .nav__menu {
-  background-color: rgb(137, 207, 240, 1);
   display: flex;
   flex-direction: column;
   justify-items: center;
   text-align: center;
   transition: 0.5s;
-  z-index: 5;
   height: fit-content;
   width: /* 100vw */ 100%;
   position: absolute;
-  top: -13em;
+  top: -15vh;
+  background-color: #89cff0;
 }
 
 .nav__menu.active {
-  top: 8vh;
+  top: 4vh;
   width: 100%; /* need to put back to 10vh */
 }
 
@@ -236,12 +227,6 @@ body {
   border-bottom: 1px solid #444;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: #89cff0;
-  opacity: 60%;
-}
-
 .hero {
   grid-area: hero;
   display: flex;
@@ -256,6 +241,7 @@ body {
   background-size: cover;
   position: relative;
   font-weight: 100;
+  z-index: -1;
 }
 
 /* .fadeIn {
@@ -290,6 +276,7 @@ body {
   color: black;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 2em;
 }
 
 .aboutMe {
@@ -299,7 +286,6 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
   padding: 0px 10px 0px;
   font-size: 1em;
   border-bottom: 1px solid black;
@@ -502,12 +488,25 @@ body {
 .tools {
   text-align: center;
 }
-
+.profileLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.pLinks {
+  font-size: 40px;
+}
+.pLink:visited {
+  color: black;
+}
 .container {
   display: flex;
   flex-direction: column;
   background-color: #89cff0;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   text-align: start;
   height: fit-content /*35vh  */;
 }
@@ -550,6 +549,7 @@ body {
   width: 50%;
   height: 50px;
   margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 input {
@@ -636,13 +636,6 @@ textarea {
   margin: 0 auto;
 }
 form {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 0.625em;
-  margin: 0 auto;*/
   padding: 20px;
   padding-top: 0;
 }
@@ -719,22 +712,25 @@ form {
   text-align: center;
 }
 @media screen and (min-width: 600px) and (max-width: 800px) {
-  .header {
+  /* .header {
     height: 13vh;
   }
   .nav__menu {
-    top: -7em;
+    top: -10vh;
   }
 
   .nav__menu.active {
-    top: 3em;
-  }
+    top: 6.5vh;
+  } */
   .hero {
     height: 70vh;
   }
   .card__icons {
     gap: 1ch;
   }
+  /* .logo {
+    height: 5em;
+  } */
 
   .aboutMe {
     display: flex;
@@ -762,6 +758,9 @@ form {
   .skill__list {
     gap: 2em;
   }
+  .contactMeBtn {
+    margin-bottom: 2em;
+  }
 }
 
 /* todo need to make layout for larger screens via media screen */
@@ -771,9 +770,42 @@ form {
   }
   .header {
     background-color: #89cff0;
-    border-bottom: none;
+    border: none;
     box-shadow: none;
     padding-bottom: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    opacity: 90%;
+    transform-style: flat;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  .nav__menu > li:not(:last-child) {
+    border-bottom: none;
+  }
+
+  .hero {
+    background-position: center;
+    background-size: cover;
+  }
+  .picWrapper {
+    width: 100%;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .hero__text {
+    font-size: 4rem;
+    position: absolute;
+    top: 6em;
+    display: inline-block;
+    width: 100%;
   }
   .nav__menu {
     background-color: rgb(137, 207, 240, 1);
@@ -784,8 +816,10 @@ form {
     transition: 0.5s;
     z-index: 5;
     height: fit-content;
-    width: /* 100vw */ 100%;
-    position: absolute;
+    position: static;
+    transform: none;
+    transition: none;
+    padding-left: 25%;
   }
   .hero {
     height: 100vh;
@@ -797,6 +831,16 @@ form {
   .skill__list {
     gap: 2em;
   }
+  .picWrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .wrapper {
+    width: fit-content;
+    font-size: larger;
+  }
 
   .aboutMe {
     display: flex;
@@ -806,6 +850,10 @@ form {
     word-wrap: wrap;
     gap: 2em;
     padding: 2em 2em;
+  }
+
+  .aboutMe__title {
+    font-size: 3em;
   }
 
   .aboutMe__description {
