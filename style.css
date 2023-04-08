@@ -802,8 +802,8 @@ form {
   }
   .hero__text {
     font-size: 4rem;
-    position: absolute;
-    top: 6em;
+    position: sticky;
+    top: 4em;
     display: inline-block;
     width: 100%;
   }
@@ -836,6 +836,14 @@ form {
     flex-direction: column;
     width: fit-content;
   }
+  .aboutMe__title {
+    text-align: end;
+  }
+  .aboutMe__description {
+    font-size: 32px;
+  }
+  .pLinks {
+  }
 
   .wrapper {
     width: fit-content;
@@ -852,7 +860,7 @@ form {
     padding: 2em 2em;
   }
 
-  .aboutMe__title {
+  h2 {
     font-size: 3em;
   }
 
