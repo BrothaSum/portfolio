@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "roboto", sans-serif;
+  font-family: 'roboto', sans-serif;
   height: fit-content;
   width: 100%;
 }
@@ -21,7 +21,7 @@ body {
   background-color: #89cff0;
   position: relative;
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -186,7 +186,7 @@ body {
 }
 
 .nav__menu.active {
-  top: 4vh;
+  top: 5vh;
   width: 100%; /* need to put back to 10vh */
 }
 
@@ -236,7 +236,7 @@ body {
   height: 50vh;
   width: 100%;
   color: white;
-  background-image: url("./img/houston1.jpg");
+  background-image: url('./img/houston1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -250,7 +250,7 @@ body {
 } */
 
 .hero::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -683,7 +683,7 @@ form {
   height: 100vh;
   gap: 0.625em;
   margin: 0 auto;
-  background-image: url("./img/houston1.jpg");
+  background-image: url('./img/houston1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -841,8 +841,6 @@ form {
   }
   .aboutMe__description {
     font-size: 32px;
-  }
-  .pLinks {
   }
 
   .wrapper {
